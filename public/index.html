@@ -8,27 +8,39 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Index</title>
   </head>
   <body>
     <div class="container">
 
-      <div>
-
-        <div class="row">
-          <h1>Golden Pig</h1>
-        </div>
+      <div class="jumbotron">
+        <h1 class="text-center">Golden Pig</h1>
         <hr>
-        <div class="row text-center">
-          <h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
-        </div>
-        <div class="row">
-          <button type="button" class="btn btn-primary">View Tables</button>
-          <button type="button" class="btn btn-danger">Make Reservation</button>
-        </div>
+        <h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
 
+        <div class="text-center">
+         <a href="/tables">
+          <button type="button" class="btn btn-primary">View Tables</button>
+         </a> 
+         <a href="/reserve">
+          <button type="button" class="btn btn-danger">Make Reservation</button>
+         </a>
+          
+        </div>
       </div>
       
+      <footer class="footer mt-4">
+        <div class="container">
+          <p>
+            <a href="/api/tables">
+              API Table Link
+            </a>
+            <a href="/api/waitlist">
+              API Waitlist
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
 
 
