@@ -18,16 +18,18 @@ app.get("/tables", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "tables.html"))
 })
 
-app.get("/makeres", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "makeres.html" ))
+app.get("/reservations", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "reservations.html" ))
 })
 
-app.get("/api/tables", (req,res) => {
+app.get("/api/tables", (req, res) => {
     return res.json(tables)
 })
 app.get("/api/waitlist", (req, res) => {
     return res.json(waitlist)
 })
+
+
 
 
 app.listen(PORT, () => {
