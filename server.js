@@ -26,11 +26,22 @@ app.get("/reservations", (req, res) => {
 app.get("/api/tables", (req, res) => {
     return res.json(reservedTables)
 })
+
 app.get("/api/waitlist", (req, res) => {
     return res.json(waitList)
 })
 
 
+app.post("/reservations", (req, res) => {
+    var newTable = req.body;
+    console.log(req.body);
+    if(reservedTables.length <= 4) {
+        reservedTables.push(newTable)
+    } else {
+        waitList.push(newTable)
+    }
+  
+})
 
 
 app.listen(PORT, () => {
