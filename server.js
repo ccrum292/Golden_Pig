@@ -20,7 +20,7 @@ app.get("/tables", (req, res) => {
 })
 
 app.get("/reservations", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "reservations.html" ))
+    res.sendFile(path.join(__dirname, "public", "reservations.html"))
 })
 
 app.get("/api/tables", (req, res) => {
@@ -31,8 +31,8 @@ app.get("/api/waitlist", (req, res) => {
     return res.json(waitList)
 })
 
-
-app.post("/reservations", (req, res) => {
+// don't have to call it on the html page. call it on the same post. 
+app.post("/api/tables", (req, res) => {
     var newTable = req.body;
     console.log(req.body);
     if(reservedTables.length <= 4) {

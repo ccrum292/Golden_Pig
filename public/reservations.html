@@ -95,8 +95,7 @@
         console.log(table);
 
         $.post("/api/tables", table)
-        .then(function (data) {
-          console.log("BRUH")
+        .then( data => {
           console.log("adding a table", data);
         });
       });
