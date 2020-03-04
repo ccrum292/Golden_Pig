@@ -87,12 +87,14 @@
         }) 
       }
 
-      $(".clear-button").on("click", function(){
-        $(`$(this).attr("class")`).remove();
-      });
+     
 
       fillList($("#table-list"), "/api/tables")
       fillList($("#waitlist-list"), "/api/waitlist")
+
+      $("#table-list").on("click", ".clear-button", function(){
+        $(this).parent().remove();
+      });
     </script>
   </body>
 </html>

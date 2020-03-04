@@ -31,18 +31,10 @@ app.get("/api/waitlist", (req, res) => {
     return res.json(waitList)
 })
 
-<<<<<<< HEAD
+
 
 app.post("/api/tables", (req, res) => {
-
     // console.log(req.body);
-=======
-
-app.post("/api/tables", (req, res) => {
-    
-    
-    // console.log(req.body);
->>>>>>> 95aba5311ccc9a581954ae5ae66d1faf1885e334
     if(reservedTables.length <= 4) {
         reservedTables.push(req.body)
     } else {
