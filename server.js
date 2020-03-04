@@ -31,16 +31,25 @@ app.get("/api/waitlist", (req, res) => {
     return res.json(waitList)
 })
 
-// don't have to call it on the html page. call it on the same post. 
+<<<<<<< HEAD
+
 app.post("/api/tables", (req, res) => {
-    var newTable = req.body;
-    console.log(req.body);
+
+    // console.log(req.body);
+=======
+
+app.post("/api/tables", (req, res) => {
+    
+    
+    // console.log(req.body);
+>>>>>>> 95aba5311ccc9a581954ae5ae66d1faf1885e334
     if(reservedTables.length <= 4) {
-        reservedTables.push(newTable)
+        reservedTables.push(req.body)
     } else {
-        waitList.push(newTable)
+        waitList.push(req.body)
     }
-  
+  console.log("waitlist " + waitList);
+  console.log("tables " + reservedTables);
 })
 
 
