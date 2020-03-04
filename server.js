@@ -9,6 +9,7 @@ const waitList = [];
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(express.static('public'));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"))
@@ -23,10 +24,10 @@ app.get("/reservations", (req, res) => {
 })
 
 app.get("/api/tables", (req, res) => {
-    return res.json(tables)
+    return res.json(reservedTables)
 })
 app.get("/api/waitlist", (req, res) => {
-    return res.json(waitlist)
+    return res.json(waitList)
 })
 
 
