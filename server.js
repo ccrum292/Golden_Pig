@@ -32,15 +32,17 @@ app.get("/api/waitlist", (req, res) => {
 })
 
 
-app.post("/reservations", (req, res) => {
-    var newTable = req.body;
-    console.log(req.body);
+app.post("/api/tables", (req, res) => {
+    
+    
+    // console.log(req.body);
     if(reservedTables.length <= 4) {
-        reservedTables.push(newTable)
+        reservedTables.push(req.body)
     } else {
-        waitList.push(newTable)
+        waitList.push(req.body)
     }
-  
+  console.log("waitlist " + waitList);
+  console.log("tables " + reservedTables);
 })
 
 

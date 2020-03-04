@@ -78,16 +78,21 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <script>
-      function fillList(target) {
-        $.get("/api/tables", function(data) {
+      function fillList(target, json) {
+        $.get(json, function(data) {
           data.forEach(element => {
-            target.append($("<p>").text(element.name))
+            let divEl = $("<div class="+element.uniqueId +"><p>"+ element.name +"</p><button class='clear-button "+ element.uniqueId +"'>Clear</button> </div>")
+            target.append(divEl);
           });
         }) 
       }
 
-      fillList($("#table-list"))
-      fillList($("#waitlist-list"))
+      $(".clear-button").on("click", function(){
+        $(`$(this).attr("class")`).remove();
+      });
+
+      fillList($("#table-list"), "/api/tables")
+      fillList($("#waitlist-list"), "/api/waitlist")
     </script>
   </body>
 </html>
