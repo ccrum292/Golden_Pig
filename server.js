@@ -20,7 +20,7 @@ app.get("/tables", (req, res) => {
 })
 
 app.get("/reservations", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "reservations.html" ))
+    res.sendFile(path.join(__dirname, "public", "reservations.html"))
 })
 
 app.get("/api/tables", (req, res) => {
@@ -32,9 +32,8 @@ app.get("/api/waitlist", (req, res) => {
 })
 
 
+
 app.post("/api/tables", (req, res) => {
-    
-    
     // console.log(req.body);
     if(reservedTables.length <= 4) {
         reservedTables.push(req.body)
